@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Hedera-inspired professional color palette */
+    --background: 0 0% 98%;
+    --foreground: 220 18% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 18% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 18% 20%;
+
+    /* Hedera primary - deep blue with modern twist */
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 220 70% 65%;
+
+    /* Secondary - complementary teal */
+    --secondary: 180 45% 55%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Accent - vibrant teal for highlights */
+    --accent: 175 60% 50%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Success - Hedera green */
+    --success: 140 50% 50%;
+    --success-foreground: 0 0% 98%;
+
+    /* Warning - professional amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 70% 50%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 70% 50%), hsl(175 60% 50%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 13% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 70% 50%), hsl(180 45% 55%));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(220 70% 50% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(220 70% 50% / 0.12);
+    --shadow-glow: 0 0 24px hsl(220 70% 50% / 0.15);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - professional space theme */
+    --background: 220 27% 8%;
+    --foreground: 220 13% 91%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 220 13% 91%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 220 13% 91%;
+
+    --primary: 220 70% 60%;
+    --primary-foreground: 220 27% 8%;
+    --primary-glow: 220 70% 75%;
+
+    --secondary: 180 45% 45%;
+    --secondary-foreground: 220 27% 8%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 175 60% 45%;
+    --accent-foreground: 220 27% 8%;
+
+    --success: 140 50% 45%;
+    --success-foreground: 220 27% 8%;
+
+    --warning: 38 92% 45%;
+    --warning-foreground: 220 27% 8%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 220 27% 8%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 220 70% 60%;
+
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 70% 50%), hsl(175 60% 40%));
+    --gradient-card: linear-gradient(135deg, hsl(220 20% 12%), hsl(220 20% 16%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 70% 40%), hsl(180 45% 35%));
+
+    /* Dark shadows */
+    --shadow-soft: 0 2px 8px hsl(220 70% 20% / 0.3);
+    --shadow-medium: 0 4px 16px hsl(220 70% 20% / 0.4);
+    --shadow-glow: 0 0 32px hsl(220 70% 50% / 0.2);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
