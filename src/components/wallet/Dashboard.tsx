@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ConnectionForm } from './ConnectionForm';
 import { AccountOverview } from './AccountOverview';
+import { SendHbar } from './SendHbar';
+import { CreateToken } from './CreateToken';
+import { AssociateToken } from './AssociateToken';
+import { TokenManager } from './TokenManager';
+import { TopicManager } from './TopicManager';
+import { MessageManager } from './MessageManager';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { useHederaAccount } from '@/hooks/useHederaAccount';
 import { 
@@ -129,51 +135,27 @@ export function Dashboard() {
             </TabsContent>
 
             <TabsContent value="send-hbar" className="space-y-6">
-              <div className="text-center py-12">
-                <Send className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Send HBAR</h3>
-                <p className="text-muted-foreground">Coming soon...</p>
-              </div>
+              <SendHbar />
             </TabsContent>
 
             <TabsContent value="tokens" className="space-y-6">
-              <div className="text-center py-12">
-                <Coins className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Token Management</h3>
-                <p className="text-muted-foreground">Coming soon...</p>
-              </div>
+              <TokenManager />
             </TabsContent>
 
             <TabsContent value="create-token" className="space-y-6">
-              <div className="text-center py-12">
-                <Plus className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Create Token</h3>
-                <p className="text-muted-foreground">Coming soon...</p>
-              </div>
+              <CreateToken />
             </TabsContent>
 
             <TabsContent value="associate" className="space-y-6">
-              <div className="text-center py-12">
-                <Link className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Associate Token</h3>
-                <p className="text-muted-foreground">Coming soon...</p>
-              </div>
+              <AssociateToken />
             </TabsContent>
 
             <TabsContent value="topics" className="space-y-6">
-              <div className="text-center py-12">
-                <Hash className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Topics</h3>
-                <p className="text-muted-foreground">Coming soon...</p>
-              </div>
+              <TopicManager />
             </TabsContent>
 
             <TabsContent value="messages" className="space-y-6">
-              <div className="text-center py-12">
-                <MessageSquare className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Messages</h3>
-                <p className="text-muted-foreground">Coming soon...</p>
-              </div>
+              <MessageManager />
             </TabsContent>
           </div>
         </Tabs>

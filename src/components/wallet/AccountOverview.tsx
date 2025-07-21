@@ -6,7 +6,7 @@ import { useHederaAccount } from '@/hooks/useHederaAccount';
 import { toast } from '@/hooks/use-toast';
 
 export function AccountOverview() {
-  const { account, clearAccount } = useHederaAccount();
+  const { account, clearAccount, refreshAccountInfo, isLoading } = useHederaAccount();
 
   if (!account) return null;
 
@@ -18,12 +18,20 @@ export function AccountOverview() {
     });
   };
 
-  const handleRefresh = () => {
-    // TODO: Implement balance refresh
-    toast({
-      title: "Refreshing...",
-      description: "Account balance updated",
-    });
+  const handleRefresh = async () => {
+    try {
+      await refreshAccountInfo();
+      toast({
+        title: "Refreshed",
+        description: "Account information updated successfully",
+      });
+    } catch (err) {
+      toast({
+        title: "Error",
+        description: "Failed to refresh account information",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -58,9 +66,10 @@ export function AccountOverview() {
                 variant="outline"
                 size="sm"
                 onClick={handleRefresh}
+                disabled={isLoading}
                 className="hover:bg-muted transition-colors"
               >
-                <RefreshCw className="h-4 w-4 mr-2" />
+                <RefreshCw className={`h-4 w-4 mr-2 ${isLoading ? 'animate-spin' : ''}`} />
                 Refresh
               </Button>
               <Button
